@@ -1,11 +1,15 @@
 import pygame
 from random import randint
-pygame.init
+pygame.init()
 
 #vars
 screen = pygame.display.set_mode((500,500))
 cops = [pygame.image.load("cop1.png"),pygame.image.load("cop2.png"),pygame.image.load("cop3.png")]
 robbers = [pygame.image.load("robber1.png"),pygame.image.load("robber2.png"),pygame.image.load("robber3.png")]
+speed = 5
+
+time_speed = 0
+speed_down = 3
 bg = pygame.image.load("background-pixilart.png")
 cop_farme = 0
 robber_farame = 0
@@ -23,10 +27,10 @@ while loop:
     #move
     keys = pygame.key.get_pressed()
     if keys[pygame.K_RIGHT]:
-        x = x + 5
+        x = x + speed
 
     if keys[pygame.K_LEFT]:
-        x = x - 5
+        x = x - speed
 
 
     #AI CODE
